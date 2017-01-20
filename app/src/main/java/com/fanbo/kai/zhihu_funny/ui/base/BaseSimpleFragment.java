@@ -17,6 +17,7 @@ import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by Kai on 2017/1/20.
+ * Email: kaihu1989@gmail.com
  */
 
 public abstract class BaseSimpleFragment extends Fragment implements BaseView {

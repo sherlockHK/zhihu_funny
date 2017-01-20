@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.fanbo.kai.zhihu_funny.presenter.base.RxSubscribeInterface;
 import com.umeng.analytics.MobclickAgent;
 
 import butterknife.ButterKnife;
@@ -13,9 +14,10 @@ import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by Kai on 2017/1/20.
+ * Email: kaihu1989@gmail.com
  */
 
-public abstract class BaseSimpleActivity extends AppCompatActivity implements BaseView {
+public abstract class BaseSimpleActivity extends AppCompatActivity implements BaseView, RxSubscribeInterface {
 
     private CompositeSubscription mCompositeSubscription;
 
@@ -55,14 +57,16 @@ public abstract class BaseSimpleActivity extends AppCompatActivity implements Ba
         unSubscribe();
     }
 
-    private void addSubscribe(Subscription subscription) {
+    @Override
+    public void addSubscribe(Subscription subscription) {
         if (mCompositeSubscription == null) {
             mCompositeSubscription = new CompositeSubscription();
         }
         mCompositeSubscription.add(subscription);
     }
 
-    private void unSubscribe() {
+    @Override
+    public void unSubscribe() {
         if (mCompositeSubscription != null) {
             mCompositeSubscription.unsubscribe();
         }
