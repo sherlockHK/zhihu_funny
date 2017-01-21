@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.fanbo.kai.zhihu_funny.ZhiHuFunnyApp;
+import com.fanbo.kai.zhihu_funny.FunnyApp;
 import com.fanbo.kai.zhihu_funny.di.component.DaggerFragmentComponent;
 import com.fanbo.kai.zhihu_funny.di.component.FragmentComponent;
 import com.fanbo.kai.zhihu_funny.di.module.FragmentModule;
@@ -34,8 +34,8 @@ public abstract class BasePresenterFragment<P extends BasePresenter> extends Bas
 
     protected abstract void inject();
 
-    protected FragmentComponent getComponent() {
-        return DaggerFragmentComponent.builder().appComponent(ZhiHuFunnyApp.getAppComponent()).fragmentModule(new FragmentModule(this)).build();
+    protected FragmentComponent getFragmentComponent() {
+        return DaggerFragmentComponent.builder().appComponent(FunnyApp.getAppComponent()).fragmentModule(new FragmentModule(this)).build();
     }
 
     @Override

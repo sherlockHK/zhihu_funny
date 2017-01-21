@@ -1,7 +1,7 @@
 package com.fanbo.kai.zhihu_funny.di.component;
 
 import com.fanbo.kai.zhihu_funny.di.module.AppModule;
-import com.fanbo.kai.zhihu_funny.network.ZhiHuFunnyApi;
+import com.fanbo.kai.zhihu_funny.network.FunnyApi;
 import com.google.gson.Gson;
 
 import javax.inject.Singleton;
@@ -17,6 +17,6 @@ import dagger.Component;
 public interface AppComponent {
     Gson getGson();
 
-    ZhiHuFunnyApi getFunnyApi();
+    FunnyApi getFunnyApi();
 
 }

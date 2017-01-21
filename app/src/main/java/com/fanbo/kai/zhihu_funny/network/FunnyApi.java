@@ -5,5 +5,5 @@ package com.fanbo.kai.zhihu_funny.network;
  * Email: kaihu1989@gmail.com
  */
 
-public class ZhiHuFunnyApi {
+public interface FunnyApi {
 }

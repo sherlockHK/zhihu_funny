@@ -3,7 +3,7 @@ package com.fanbo.kai.zhihu_funny.ui.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.fanbo.kai.zhihu_funny.ZhiHuFunnyApp;
+import com.fanbo.kai.zhihu_funny.FunnyApp;
 import com.fanbo.kai.zhihu_funny.di.component.ActivityComponent;
 import com.fanbo.kai.zhihu_funny.di.component.DaggerActivityComponent;
 import com.fanbo.kai.zhihu_funny.di.module.ActivityModule;
@@ -32,7 +32,7 @@ public abstract class BasePresenterActivity<P extends BasePresenter> extends Bas
     protected abstract void inject();
 
     protected ActivityComponent getActivityComponent(){
-        return DaggerActivityComponent.builder().appComponent(ZhiHuFunnyApp.getAppComponent()).activityModule(new ActivityModule(this)).build();
+        return DaggerActivityComponent.builder().appComponent(FunnyApp.getAppComponent()).activityModule(new ActivityModule(this)).build();
     }
 
     @Override

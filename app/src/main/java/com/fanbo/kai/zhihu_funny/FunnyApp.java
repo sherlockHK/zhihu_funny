@@ -12,7 +12,7 @@ import com.umeng.analytics.MobclickAgent;
  * Email: kaihu1989@gmail.com
  */
 
-public class ZhiHuFunnyApp extends Application {
+public class FunnyApp extends Application {
     private static AppComponent appComponent;
 
     @Override

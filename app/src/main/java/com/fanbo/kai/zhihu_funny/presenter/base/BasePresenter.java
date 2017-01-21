@@ -1,6 +1,6 @@
 package com.fanbo.kai.zhihu_funny.presenter.base;
 
-import com.fanbo.kai.zhihu_funny.network.ZhiHuFunnyApi;
+import com.fanbo.kai.zhihu_funny.network.FunnyApi;
 import com.fanbo.kai.zhihu_funny.ui.base.BaseView;
 
 import javax.inject.Inject;
@@ -14,10 +14,10 @@ import rx.subscriptions.CompositeSubscription;
  */
 
 public class BasePresenter<T extends BaseView> implements BasePresenterInterface<T>, RxSubscribeInterface {
-    private T mView;
-    private CompositeSubscription mCompositeSubscription;
+    protected T mView;
+    protected CompositeSubscription mCompositeSubscription;
     @Inject
-    protected ZhiHuFunnyApi funnyApi;
+    protected FunnyApi funnyApi;
 
     @Override
     public void attachView(T view) {

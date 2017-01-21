@@ -1,8 +1,8 @@
 package com.fanbo.kai.zhihu_funny.di.module;
 
-import com.fanbo.kai.zhihu_funny.ZhiHuFunnyApp;
-import com.fanbo.kai.zhihu_funny.network.ZhiHuFunnyApi;
-import com.fanbo.kai.zhihu_funny.network.ZhiHuFunnyRetrofit;
+import com.fanbo.kai.zhihu_funny.FunnyApp;
+import com.fanbo.kai.zhihu_funny.network.FunnyApi;
+import com.fanbo.kai.zhihu_funny.network.FunnyRetrofit;
 import com.google.gson.Gson;
 
 import javax.inject.Singleton;
@@ -16,27 +16,26 @@ import dagger.Provides;
  */
 @Module
 public class AppModule {
-    private ZhiHuFunnyApp app;
+    private FunnyApp app;
 
-    public AppModule(ZhiHuFunnyApp app) {
+    public AppModule(FunnyApp app) {
         this.app = app;
     }
 
     @Provides
     @Singleton
-    public ZhiHuFunnyApp providesApp() {
+    public FunnyApp providesApp() {
         return app;
     }
     @Provides
     @Singleton
-    public ZhiHuFunnyRetrofit providesPuerBiRetrofit() {
-        return new ZhiHuFunnyRetrofit();
+    public FunnyRetrofit providesFunnyRetrofit() {
+        return new FunnyRetrofit();
     }
     @Provides
     @Singleton
-    public ZhiHuFunnyApi providesPuerBiApi(ZhiHuFunnyRetrofit zhiHuFunnyRetrofit) {
-//        return zhiHuFunnyRetrofit.getRetrofit().create(ZhiHuFunnyApi.class);
-        return null;
+    public FunnyApi providesFunnyApi(FunnyRetrofit funnyRetrofit) {
+        return funnyRetrofit.getRetrofit().create(FunnyApi.class);
     }
 
     @Provides
