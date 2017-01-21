@@ -1,8 +1,7 @@
 package com.fanbo.kai.zhihu_funny.di.module;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 
 import com.fanbo.kai.zhihu_funny.di.annotation.PerFragment;
 
@@ -18,7 +17,7 @@ import dagger.Provides;
 public class FragmentModule {
     private Fragment fragment;
 
-    public FragmentModule(Activity activity) {
+    public FragmentModule(Fragment fragment) {
         this.fragment = fragment;
     }
 

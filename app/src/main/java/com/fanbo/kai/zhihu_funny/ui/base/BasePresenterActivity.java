@@ -30,6 +30,7 @@ public abstract class BasePresenterActivity<P extends BasePresenter> extends Bas
     }
 
     protected abstract void inject();
+
     protected ActivityComponent getActivityComponent(){
         return DaggerActivityComponent.builder().appComponent(ZhiHuFunnyApp.getAppComponent()).activityModule(new ActivityModule(this)).build();
     }
