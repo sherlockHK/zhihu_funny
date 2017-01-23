@@ -21,9 +21,12 @@ public class FunnyApp extends Application {
 
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
     }
 
     public static AppComponent getAppComponent() {
         return appComponent;
     }
+
+
 }

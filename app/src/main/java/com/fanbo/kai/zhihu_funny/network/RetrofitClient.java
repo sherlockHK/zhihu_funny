@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Email: kaihu1989@gmail.com
  */
 
-public class FunnyRetrofit {
+public class RetrofitClient {
     private final static String host = "https://xxxx";
 
     public Retrofit getRetrofit() {
@@ -31,7 +31,7 @@ public class FunnyRetrofit {
     };
     private Retrofit retrofit;
 
-    public FunnyRetrofit() {
+    public RetrofitClient() {
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
