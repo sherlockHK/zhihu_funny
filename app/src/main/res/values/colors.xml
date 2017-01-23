@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--loading对话框背景-->
+    <color name="black_78">#78000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>
