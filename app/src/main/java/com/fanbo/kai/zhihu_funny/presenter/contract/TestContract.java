@@ -14,6 +14,6 @@ public interface TestContract {
     }
 
     interface Presenter extends BasePresenterInterface<View> {
-        void test(String str);
+        void test();
     }
 }

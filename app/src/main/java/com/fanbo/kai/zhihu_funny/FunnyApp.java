@@ -1,6 +1,7 @@
 package com.fanbo.kai.zhihu_funny;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.fanbo.kai.zhihu_funny.di.component.AppComponent;
 import com.fanbo.kai.zhihu_funny.di.component.DaggerAppComponent;
@@ -14,6 +15,7 @@ import com.umeng.analytics.MobclickAgent;
 
 public class FunnyApp extends Application {
     private static AppComponent appComponent;
+    private static Context instance;
 
     @Override
     public void onCreate() {
@@ -21,7 +23,7 @@ public class FunnyApp extends Application {
 
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
         appComponent = DaggerAppComponent.builder().appModule(new AppModule(this)).build();
-        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+        instance = this;
     }
 
     public static AppComponent getAppComponent() {
@@ -29,4 +31,7 @@ public class FunnyApp extends Application {
     }
 
 
+    public static Context getAppContext() {
+        return instance;
+    }
 }

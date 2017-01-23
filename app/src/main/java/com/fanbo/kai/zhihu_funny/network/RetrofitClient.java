@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RetrofitClient {
-    private final static String host = "https://xxxx";
+    private final static String host = "http://news-at.zhihu.com/api/4/";
 
     public Retrofit getRetrofit() {
         return retrofit;

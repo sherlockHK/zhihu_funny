@@ -1,5 +1,6 @@
 package com.fanbo.kai.zhihu_funny.presenter;
 
+import com.fanbo.kai.zhihu_funny.model.StartImage;
 import com.fanbo.kai.zhihu_funny.presenter.base.BasePresenter;
 import com.fanbo.kai.zhihu_funny.presenter.contract.TestContract;
 
@@ -17,7 +18,12 @@ public class TestPresenter extends BasePresenter<TestContract.View> implements T
     }
 
     @Override
-    public void test(String str) {
-        mView.showTest(str);
+    public void test() {
+        httpRequest(funnyApi.getStartImage(), new RequestListener<StartImage>() {
+            @Override
+            public void onSuccess(StartImage response) {
+                mView.showTest(response.getImg());
+            }
+        });
     }
 }
