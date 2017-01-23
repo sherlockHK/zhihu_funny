@@ -3,7 +3,7 @@ package com.fanbo.kai.zhihu_funny.presenter.base;
 import android.app.Activity;
 
 import com.fanbo.kai.zhihu_funny.model.base.ApiResponseFunc1;
-import com.fanbo.kai.zhihu_funny.model.base.BaseResponse;
+import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
 import com.fanbo.kai.zhihu_funny.network.FunnyApi;
 import com.fanbo.kai.zhihu_funny.ui.base.BaseView;
 
@@ -55,7 +55,7 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
     /**
      * presenter层发网络请求，封装了loading动画，错误提示等
      * */
-    protected <P extends BaseResponse> void httpRequest(Observable<P> observable, final RequestListener<P> listener) {
+    protected <P extends BaseModel> void httpRequest(Observable<P> observable, final RequestListener<P> listener) {
         Subscription subscribe = observable
                 .map(new ApiResponseFunc1<P>())
                 .subscribeOn(Schedulers.io())
@@ -70,7 +70,7 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
         addSubscribe(subscribe);
     }
 
-    protected interface RequestListener<P extends BaseResponse>{
+    protected interface RequestListener<P extends BaseModel>{
         void onSuccess(P response);
     }
 }

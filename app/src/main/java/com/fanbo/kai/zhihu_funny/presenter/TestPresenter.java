@@ -1,6 +1,7 @@
 package com.fanbo.kai.zhihu_funny.presenter;
 
-import com.fanbo.kai.zhihu_funny.model.StartImage;
+import com.fanbo.kai.zhihu_funny.FunnyApp;
+import com.fanbo.kai.zhihu_funny.model.StartImageDao;
 import com.fanbo.kai.zhihu_funny.presenter.base.BasePresenter;
 import com.fanbo.kai.zhihu_funny.presenter.contract.TestContract;
 
@@ -19,11 +20,10 @@ public class TestPresenter extends BasePresenter<TestContract.View> implements T
 
     @Override
     public void test() {
-        httpRequest(funnyApi.getStartImage(), new RequestListener<StartImage>() {
-            @Override
-            public void onSuccess(StartImage response) {
-                mView.showTest(response.getImg());
-            }
+        StartImageDao startImageDao = FunnyApp.getDaoSession().getStartImageDao();
+        httpRequest(funnyApi.getStartImage(), response -> {
+            mView.showTest(response.getImg());
+            startImageDao.insert(response);
         });
     }
 }

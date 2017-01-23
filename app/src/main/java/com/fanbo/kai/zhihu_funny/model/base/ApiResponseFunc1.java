@@ -9,11 +9,11 @@ import rx.functions.Func1;
  * Email: kaihu1989@gmail.com.
  */
 
-public class ApiResponseFunc1<T> implements Func1<BaseResponse, T> {
+public class ApiResponseFunc1<T> implements Func1<BaseModel, T> {
     private ApiException exception;
 
     @Override
-    public T call(BaseResponse baseResponse) {
-        return (T) baseResponse;
+    public T call(BaseModel baseModel) {
+        return (T) baseModel;
     }
 }

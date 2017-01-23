@@ -8,7 +8,7 @@ import android.os.Parcelable;
  * Email: kaihu1989@gmail.com.
  */
 
-public class BaseResponse implements Parcelable{
+public class BaseModel implements Parcelable{
 
     @Override
     public int describeContents() {

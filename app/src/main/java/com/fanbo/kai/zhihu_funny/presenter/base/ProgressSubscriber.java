@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.fanbo.kai.zhihu_funny.FunnyApp;
-import com.fanbo.kai.zhihu_funny.model.base.BaseResponse;
+import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
 import com.fanbo.kai.zhihu_funny.ui.widget.dialog.ProgressDialogHandler;
 
 import java.net.ConnectException;
@@ -18,7 +18,7 @@ import rx.Subscriber;
  * Email: kaihu1989@gmail.com.
  */
 
-public class ProgressSubscriber<T extends BaseResponse> extends Subscriber<T> implements ProgressDialogHandler.ProgressCancelListener {
+public class ProgressSubscriber<T extends BaseModel> extends Subscriber<T> implements ProgressDialogHandler.ProgressCancelListener {
     private SubscriberOnNextListener<T> mListener;
     private Context mContext;
     private ProgressDialogHandler mHandler;
