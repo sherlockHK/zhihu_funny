@@ -1,5 +1,6 @@
 package com.fanbo.kai.zhihu_funny.presenter.contract;
 
+import com.fanbo.kai.zhihu_funny.model.Sections;
 import com.fanbo.kai.zhihu_funny.presenter.base.BasePresenterInterface;
 import com.fanbo.kai.zhihu_funny.view.base.BaseView;
 
@@ -8,12 +9,13 @@ import com.fanbo.kai.zhihu_funny.view.base.BaseView;
  * Email: kaihu1989@gmail.com
  */
 
-public interface TestContract {
+public interface IndexContract {
     interface View extends BaseView{
-        void showTest(String str);
+
+        void showSections(Sections sections);
     }
 
     interface Presenter extends BasePresenterInterface<View> {
-        void test();
+        void initSections();
     }
 }

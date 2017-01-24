@@ -1,6 +1,7 @@
 package com.fanbo.kai.zhihu_funny.network;
 
 import com.fanbo.kai.zhihu_funny.model.StartImage;
+import com.fanbo.kai.zhihu_funny.model.Sections;
 
 import retrofit2.http.GET;
 import rx.Observable;
@@ -13,4 +14,7 @@ import rx.Observable;
 public interface FunnyApi {
     @GET("start-image/1080*1776")
     Observable<StartImage> getStartImage();
+
+    @GET("sections")
+    Observable<Sections> getSections();
 }
