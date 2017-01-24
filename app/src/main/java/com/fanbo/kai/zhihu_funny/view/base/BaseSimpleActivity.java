@@ -1,4 +1,4 @@
-package com.fanbo.kai.zhihu_funny.ui.base;
+package com.fanbo.kai.zhihu_funny.view.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -70,21 +70,6 @@ public abstract class BaseSimpleActivity extends AppCompatActivity implements Ba
         if (mCompositeSubscription != null) {
             mCompositeSubscription.unsubscribe();
         }
-    }
-
-    @Override
-    public void startLoading() {
-
-    }
-
-    @Override
-    public void endLoading() {
-
-    }
-
-    @Override
-    public void loadingError(String error) {
-        showToast(error);
     }
 
     @Override

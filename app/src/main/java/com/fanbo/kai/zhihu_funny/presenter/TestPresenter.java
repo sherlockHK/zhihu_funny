@@ -1,6 +1,5 @@
 package com.fanbo.kai.zhihu_funny.presenter;
 
-import com.fanbo.kai.zhihu_funny.FunnyApp;
 import com.fanbo.kai.zhihu_funny.model.StartImageDao;
 import com.fanbo.kai.zhihu_funny.presenter.base.BasePresenter;
 import com.fanbo.kai.zhihu_funny.presenter.contract.TestContract;
@@ -13,14 +12,13 @@ import javax.inject.Inject;
  */
 
 public class TestPresenter extends BasePresenter<TestContract.View> implements TestContract.Presenter {
-
     @Inject
     public TestPresenter() {
     }
 
     @Override
     public void test() {
-        StartImageDao startImageDao = FunnyApp.getDaoSession().getStartImageDao();
+        StartImageDao startImageDao = dbManager.getDaoSession().getStartImageDao();
         httpRequest(funnyApi.getStartImage(), response -> {
             mView.showTest(response.getImg());
             startImageDao.insert(response);

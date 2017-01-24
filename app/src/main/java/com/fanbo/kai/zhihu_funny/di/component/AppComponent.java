@@ -1,8 +1,8 @@
 package com.fanbo.kai.zhihu_funny.di.component;
 
 import com.fanbo.kai.zhihu_funny.di.module.AppModule;
+import com.fanbo.kai.zhihu_funny.model.db.DbManager;
 import com.fanbo.kai.zhihu_funny.network.FunnyApi;
-import com.google.gson.Gson;
 
 import javax.inject.Singleton;
 
@@ -15,8 +15,7 @@ import dagger.Component;
 @Singleton
 @Component(modules = AppModule.class)
 public interface AppComponent {
-    Gson getGson();
-
     FunnyApi getFunnyApi();
 
+    DbManager getDbManager();
 }

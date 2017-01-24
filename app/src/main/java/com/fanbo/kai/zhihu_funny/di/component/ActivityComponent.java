@@ -14,5 +14,5 @@ import dagger.Component;
 @PerActivity
 @Component(dependencies = AppComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
-    void Inject(MainActivity mainActivity);
+    void inject(MainActivity mainActivity);
 }

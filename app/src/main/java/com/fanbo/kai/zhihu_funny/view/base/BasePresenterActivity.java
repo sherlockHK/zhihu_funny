@@ -1,4 +1,4 @@
-package com.fanbo.kai.zhihu_funny.ui.base;
+package com.fanbo.kai.zhihu_funny.view.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

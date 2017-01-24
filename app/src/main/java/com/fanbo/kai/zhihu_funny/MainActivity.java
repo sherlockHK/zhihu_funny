@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.fanbo.kai.zhihu_funny.presenter.TestPresenter;
 import com.fanbo.kai.zhihu_funny.presenter.contract.TestContract;
-import com.fanbo.kai.zhihu_funny.ui.base.BasePresenterActivity;
+import com.fanbo.kai.zhihu_funny.view.base.BasePresenterActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -29,7 +29,7 @@ public class MainActivity extends BasePresenterActivity<TestPresenter> implement
 
     @Override
     protected void inject() {
-        getActivityComponent().Inject(this);
+        getActivityComponent().inject(this);
     }
 
     @Override

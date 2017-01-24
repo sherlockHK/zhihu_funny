@@ -4,8 +4,9 @@ import android.app.Activity;
 
 import com.fanbo.kai.zhihu_funny.model.base.ApiResponseFunc1;
 import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
+import com.fanbo.kai.zhihu_funny.model.db.DbManager;
 import com.fanbo.kai.zhihu_funny.network.FunnyApi;
-import com.fanbo.kai.zhihu_funny.ui.base.BaseView;
+import com.fanbo.kai.zhihu_funny.view.base.BaseView;
 
 import javax.inject.Inject;
 
@@ -25,6 +26,8 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
     protected CompositeSubscription mCompositeSubscription;
     @Inject
     protected FunnyApi funnyApi;
+    @Inject
+    protected DbManager dbManager;
 
     @Override
     public void attachView(T view) {
@@ -61,12 +64,7 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new ProgressSubscriber<>(new SubscriberOnNextListener<P>() {
-                    @Override
-                    public void onNext(P response) {
-                        listener.onSuccess(response);
-                    }
-                }, (Activity) mView));
+                .subscribe(new ProgressSubscriber<>(listener::onSuccess, (Activity) mView));
         addSubscribe(subscribe);
     }
 

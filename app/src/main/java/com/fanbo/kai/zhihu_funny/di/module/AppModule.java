@@ -1,9 +1,9 @@
 package com.fanbo.kai.zhihu_funny.di.module;
 
 import com.fanbo.kai.zhihu_funny.FunnyApp;
+import com.fanbo.kai.zhihu_funny.model.db.DbManager;
 import com.fanbo.kai.zhihu_funny.network.FunnyApi;
 import com.fanbo.kai.zhihu_funny.network.RetrofitClient;
-import com.google.gson.Gson;
 
 import javax.inject.Singleton;
 
@@ -24,24 +24,23 @@ public class AppModule {
 
     @Provides
     @Singleton
-    public FunnyApp providesApp() {
+    FunnyApp provideApp() {
         return app;
     }
+
     @Provides
     @Singleton
-    public RetrofitClient providesFunnyRetrofit() {
+    RetrofitClient provideFunnyRetrofit() {
         return new RetrofitClient();
     }
+
     @Provides
     @Singleton
-    public FunnyApi providesFunnyApi(RetrofitClient retrofitClient) {
+    FunnyApi provideFunnyApi(RetrofitClient retrofitClient) {
         return retrofitClient.getRetrofit().create(FunnyApi.class);
     }
 
     @Provides
     @Singleton
-    public Gson providesGson() {
-        return new Gson();
-    }
-
+    DbManager provideDbManager() {return new DbManager();}
 }

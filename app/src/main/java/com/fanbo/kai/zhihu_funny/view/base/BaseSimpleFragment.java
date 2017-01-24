@@ -1,4 +1,4 @@
-package com.fanbo.kai.zhihu_funny.ui.base;
+package com.fanbo.kai.zhihu_funny.view.base;
 
 
 import android.os.Bundle;
@@ -82,21 +82,6 @@ public abstract class BaseSimpleFragment extends Fragment implements BaseView {
         if (mCompositeSubscription != null) {
             mCompositeSubscription.unsubscribe();
         }
-    }
-
-    @Override
-    public void startLoading() {
-
-    }
-
-    @Override
-    public void endLoading() {
-
-    }
-
-    @Override
-    public void loadingError(String error) {
-        showToast(error);
     }
 
     @Override

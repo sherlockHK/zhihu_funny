@@ -23,7 +23,7 @@ public class FragmentModule {
 
     @PerFragment
     @Provides
-    public Context providesActivity() {
+    Context provideActivity() {
         return fragment.getActivity();
     }
 }

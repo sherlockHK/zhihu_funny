@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 import com.fanbo.kai.zhihu_funny.FunnyApp;
 import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
-import com.fanbo.kai.zhihu_funny.ui.widget.dialog.ProgressDialogHandler;
+import com.fanbo.kai.zhihu_funny.view.widget.dialog.ProgressDialogHandler;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -20,12 +20,10 @@ import rx.Subscriber;
 
 public class ProgressSubscriber<T extends BaseModel> extends Subscriber<T> implements ProgressDialogHandler.ProgressCancelListener {
     private SubscriberOnNextListener<T> mListener;
-    private Context mContext;
     private ProgressDialogHandler mHandler;
 
     public ProgressSubscriber(SubscriberOnNextListener<T> listener, Context context) {
         this.mListener = listener;
-        this.mContext = context;
         mHandler = new ProgressDialogHandler(context, this, true);
     }
 

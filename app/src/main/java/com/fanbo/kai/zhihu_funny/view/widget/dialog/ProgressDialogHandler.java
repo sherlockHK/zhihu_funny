@@ -1,11 +1,10 @@
-package com.fanbo.kai.zhihu_funny.ui.widget.dialog;
+package com.fanbo.kai.zhihu_funny.view.widget.dialog;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
 
-import com.fanbo.kai.zhihu_funny.ui.widget.dialog.base.LoadingDialog;
+import com.fanbo.kai.zhihu_funny.view.widget.dialog.base.LoadingDialog;
 
 /**
  * Created by HK on 2017/1/23.
@@ -37,12 +36,7 @@ public class ProgressDialogHandler extends Handler {
             pd.setCancelable(cancelable);
 
             if (cancelable) {
-                pd.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialogInterface) {
-                        mProgressCancelListener.onCancelProgress();
-                    }
-                });
+                pd.setOnCancelListener(dialogInterface -> mProgressCancelListener.onCancelProgress());
             }
 
             if (!pd.isShowing()) {

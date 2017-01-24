@@ -1,7 +1,7 @@
 package com.fanbo.kai.zhihu_funny.presenter.contract;
 
 import com.fanbo.kai.zhihu_funny.presenter.base.BasePresenterInterface;
-import com.fanbo.kai.zhihu_funny.ui.base.BaseView;
+import com.fanbo.kai.zhihu_funny.view.base.BaseView;
 
 /**
  * Created by Kai on 2017/1/21.

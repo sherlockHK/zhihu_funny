@@ -1,4 +1,4 @@
-package com.fanbo.kai.zhihu_funny.ui.base;
+package com.fanbo.kai.zhihu_funny.view.base;
 
 /**
  * Created by Kai on 2017/1/20.
@@ -6,11 +6,5 @@ package com.fanbo.kai.zhihu_funny.ui.base;
  */
 
 public interface BaseView {
-    void startLoading();
-
-    void endLoading();
-
-    void loadingError(String error);
-
     void showToast(String message);
 }

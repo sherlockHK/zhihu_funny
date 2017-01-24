@@ -1,4 +1,4 @@
-package com.fanbo.kai.zhihu_funny.ui.widget.dialog.base;
+package com.fanbo.kai.zhihu_funny.view.widget.dialog.base;
 
 import android.app.Dialog;
 import android.content.Context;
