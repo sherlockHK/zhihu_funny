@@ -56,7 +56,7 @@ public class ProgressSubscriber<T extends BaseModel> extends Subscriber<T> imple
         if (e instanceof SocketTimeoutException || e instanceof ConnectException || e instanceof UnknownHostException) {
             Toast.makeText(FunnyApp.getAppContext(), "网络超时，请检查网络", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(FunnyApp.getAppContext(), "error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(FunnyApp.getAppContext(), "error:" + e.getMessage(), Toast.LENGTH_LONG).show();
         }
         dismissProgressDialog();
     }

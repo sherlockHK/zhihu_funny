@@ -33,9 +33,9 @@ public abstract class BaseSimpleActivity extends AppCompatActivity implements Ba
 
     protected abstract int getLayoutId();
 
-    protected abstract void initView();
-
     protected abstract void initData();
+
+    protected abstract void initView();
 
     @Override
     protected void onResume() {
