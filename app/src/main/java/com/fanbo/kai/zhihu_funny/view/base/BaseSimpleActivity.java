@@ -27,15 +27,15 @@ public abstract class BaseSimpleActivity extends AppCompatActivity implements Ba
         setContentView(getLayoutId());
         ButterKnife.bind(this);
 
-        initData();
         initView();
+        initData();
     }
 
     protected abstract int getLayoutId();
 
-    protected abstract void initData();
-
     protected abstract void initView();
+
+    protected abstract void initData();
 
     @Override
     protected void onResume() {

@@ -1,5 +1,6 @@
 package com.fanbo.kai.zhihu_funny.view.index.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -7,6 +8,7 @@ import com.fanbo.kai.zhihu_funny.R;
 import com.fanbo.kai.zhihu_funny.model.Sections;
 import com.fanbo.kai.zhihu_funny.presenter.IndexPresenter;
 import com.fanbo.kai.zhihu_funny.presenter.contract.IndexContract;
+import com.fanbo.kai.zhihu_funny.utils.Constants;
 import com.fanbo.kai.zhihu_funny.view.base.BasePresenterActivity;
 import com.fanbo.kai.zhihu_funny.view.base.RecyclerViewBaseAdapter;
 import com.fanbo.kai.zhihu_funny.view.base.RecyclerViewBaseHolder;
@@ -41,11 +43,6 @@ public class IndexActivity extends BasePresenterActivity<IndexPresenter> impleme
     }
 
     @Override
-    protected void initData() {
-        mPresenter.initSections();
-    }
-
-    @Override
     protected void initView() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -58,6 +55,11 @@ public class IndexActivity extends BasePresenterActivity<IndexPresenter> impleme
     }
 
     @Override
+    protected void initData() {
+        mPresenter.initSections();
+    }
+
+    @Override
     public void showSections(Sections sections) {
         sectionList.clear();
         sectionList.addAll(sections.getData());
@@ -66,6 +68,8 @@ public class IndexActivity extends BasePresenterActivity<IndexPresenter> impleme
 
     @Override
     public void onItemClick(RecyclerViewBaseHolder holder, int position) {
-        showToast(mAdapter.getData(position).getId().toString());
+        Intent intent = new Intent(this, ContentActivity.class);
+        intent.putExtra(Constants.SECTION_ID, mAdapter.getData(position).getId());
+        startActivity(intent);
     }
 }

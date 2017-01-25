@@ -22,6 +22,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".view.index.activity.ContentActivity" />
+
         <!--友盟配置-->
         <meta-data android:value="5885637c734be46f49001974" android:name="UMENG_APPKEY"/>
         <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>

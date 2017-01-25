@@ -6,4 +6,5 @@ package com.fanbo.kai.zhihu_funny.utils;
  */
 
 public class Constants {
+    public static final String SECTION_ID = "section_id";
 }

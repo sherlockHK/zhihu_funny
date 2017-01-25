@@ -19,12 +19,12 @@ public class Sections extends BaseModel {
     }
 
     public static class Section implements android.os.Parcelable {
-        private Long id;
+        private int id;
         private String description;
         private String name;
         private String thumbnail;
 
-        public Long getId() {
+        public int getId() {
             return id;
         }
 
@@ -57,7 +57,7 @@ public class Sections extends BaseModel {
         }
 
         protected Section(Parcel in) {
-            this.id = (Long) in.readValue(Long.class.getClassLoader());
+            this.id = (int) in.readValue(Long.class.getClassLoader());
             this.description = in.readString();
             this.name = in.readString();
             this.thumbnail = in.readString();
