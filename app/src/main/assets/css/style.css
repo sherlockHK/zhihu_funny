@@ -196,7 +196,7 @@ ol {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 1.5em;
   color: #b8b8b8;
 }
 .meta .source-icon {
@@ -239,7 +239,7 @@ ol {
   text-align: center;
 }
 .view-more a {
-  font-size: 16px;
+  font-size: 2em;
   display: inline-block;
   width: 125px;
   height: 30px;
@@ -258,7 +258,7 @@ ol {
   line-height: 1.4em;
   color: #000;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 2.5em;
   margin: 20px 0;
 }
 .meta .author {
@@ -818,7 +818,7 @@ blockquote {
 }
 
 .content {
-  font-size: 17px;
+  font-size: 2.5em;
   color: #616466;
 }
 
