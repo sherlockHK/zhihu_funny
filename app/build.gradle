@@ -5,7 +5,7 @@ apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "25"
+    buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "com.fanbo.kai.zhihu_funny"
         minSdkVersion 18
