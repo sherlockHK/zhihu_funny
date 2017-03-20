@@ -7,6 +7,6 @@ import rx.Subscription;
  * Email: kaihu1989@gmail.com
  */
 public interface RxSubscribeInterface {
-    void addSubscribe(Subscription subscription);
+    void addSubscription(Subscription subscription);
     void unSubscribe();
 }

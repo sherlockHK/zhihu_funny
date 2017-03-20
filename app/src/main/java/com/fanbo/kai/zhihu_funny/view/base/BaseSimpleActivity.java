@@ -58,7 +58,7 @@ public abstract class BaseSimpleActivity extends AppCompatActivity implements Ba
     }
 
     @Override
-    public void addSubscribe(Subscription subscription) {
+    public void addSubscription(Subscription subscription) {
         if (mCompositeSubscription == null) {
             mCompositeSubscription = new CompositeSubscription();
         }

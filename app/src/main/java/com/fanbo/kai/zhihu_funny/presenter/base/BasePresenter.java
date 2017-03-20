@@ -41,7 +41,7 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
     }
 
     @Override
-    public void addSubscribe(Subscription subscription) {
+    public void addSubscription(Subscription subscription) {
         if (mCompositeSubscription == null) {
             mCompositeSubscription = new CompositeSubscription();
         }
@@ -65,7 +65,7 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new ProgressSubscriber<>(listener::onSuccess, (Activity) mView));
-        addSubscribe(subscribe);
+        addSubscription(subscribe);
     }
 
     protected interface RequestListener<P extends BaseModel>{
