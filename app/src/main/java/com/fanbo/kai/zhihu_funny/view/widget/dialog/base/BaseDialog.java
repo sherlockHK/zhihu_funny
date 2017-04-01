@@ -22,8 +22,8 @@ public class BaseDialog extends Dialog {
         attributesParams.dimAmount = 0.4f;
 
         @SuppressWarnings("deprecation")
-        int sreemWidth = window.getWindowManager().getDefaultDisplay().getWidth();
-        int windowWidth = (int) (sreemWidth * 0.8);
+        int screenWidth = window.getWindowManager().getDefaultDisplay().getWidth();
+        int windowWidth = (int) (screenWidth * 0.8);
 
         window.setLayout(windowWidth, WindowManager.LayoutParams.WRAP_CONTENT);
     }

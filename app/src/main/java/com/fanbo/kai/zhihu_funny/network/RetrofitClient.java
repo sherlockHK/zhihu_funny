@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -21,7 +22,11 @@ public class RetrofitClient {
         return retrofit;
     }
 
-    private Interceptor interceptor = chain -> chain.proceed(chain.request());
+    private Interceptor interceptor = chain -> {
+        Request request = chain.request();
+        return chain.proceed(request);
+    };
+
     private Retrofit retrofit;
 
     public RetrofitClient() {

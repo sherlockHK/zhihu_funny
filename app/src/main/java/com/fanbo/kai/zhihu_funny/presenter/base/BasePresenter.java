@@ -7,6 +7,7 @@ import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
 import com.fanbo.kai.zhihu_funny.model.db.DbManager;
 import com.fanbo.kai.zhihu_funny.network.FunnyApi;
 import com.fanbo.kai.zhihu_funny.view.base.BaseView;
+import com.fanbo.kai.zhihu_funny.view.widget.dialog.ProgressSubscriber;
 
 import javax.inject.Inject;
 

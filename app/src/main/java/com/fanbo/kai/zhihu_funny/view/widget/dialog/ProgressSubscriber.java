@@ -1,11 +1,10 @@
-package com.fanbo.kai.zhihu_funny.presenter.base;
+package com.fanbo.kai.zhihu_funny.view.widget.dialog;
 
 import android.content.Context;
 import android.widget.Toast;
 
 import com.fanbo.kai.zhihu_funny.FunnyApp;
 import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
-import com.fanbo.kai.zhihu_funny.view.widget.dialog.ProgressDialogHandler;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;

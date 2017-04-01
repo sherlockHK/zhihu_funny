@@ -1,7 +1,6 @@
 package com.fanbo.kai.zhihu_funny.presenter.contract;
 
 import com.fanbo.kai.zhihu_funny.model.Sections;
-import com.fanbo.kai.zhihu_funny.presenter.base.BasePresenterInterface;
 import com.fanbo.kai.zhihu_funny.view.base.BaseView;
 
 /**
@@ -15,7 +14,7 @@ public interface IndexContract {
         void showSections(Sections sections);
     }
 
-    interface Presenter extends BasePresenterInterface<View> {
+    interface Presenter{
         void initSections();
     }
 }

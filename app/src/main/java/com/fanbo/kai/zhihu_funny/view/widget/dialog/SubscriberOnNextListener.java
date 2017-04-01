@@ -1,4 +1,4 @@
-package com.fanbo.kai.zhihu_funny.presenter.base;
+package com.fanbo.kai.zhihu_funny.view.widget.dialog;
 
 /**
  * Created by HK on 2017/1/23.

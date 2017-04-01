@@ -1,10 +1,11 @@
-package com.fanbo.kai.zhihu_funny.view.widget.dialog.base;
+package com.fanbo.kai.zhihu_funny.view.widget.dialog;
 
 import android.content.Context;
 import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.fanbo.kai.zhihu_funny.R;
+import com.fanbo.kai.zhihu_funny.view.widget.dialog.base.BaseDialog;
 
 /**
  * Created by HK on 2017/1/23.

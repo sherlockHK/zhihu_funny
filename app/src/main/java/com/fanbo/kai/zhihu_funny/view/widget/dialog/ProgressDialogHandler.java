@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
-import com.fanbo.kai.zhihu_funny.view.widget.dialog.base.LoadingDialog;
-
 /**
  * Created by HK on 2017/1/23.
  * Email: kaihu1989@gmail.com.
@@ -15,7 +13,7 @@ public class ProgressDialogHandler extends Handler {
     public static final int SHOW_PROGRESS_DIALOG = 1;
     public static final int DISMISS_PROGRESS_DIALOG = 2;
 
-    private LoadingDialog pd;
+    private LoadingDialog dialog;
 
     private Context context;
     private boolean cancelable;
@@ -30,25 +28,25 @@ public class ProgressDialogHandler extends Handler {
     }
 
     private void initProgressDialog() {
-        if (pd == null) {
-            pd = new LoadingDialog(context);
+        if (dialog == null) {
+            dialog = new LoadingDialog(context);
 
-            pd.setCancelable(cancelable);
+            dialog.setCancelable(cancelable);
 
             if (cancelable) {
-                pd.setOnCancelListener(dialogInterface -> mProgressCancelListener.onCancelProgress());
+                dialog.setOnCancelListener(dialogInterface -> mProgressCancelListener.onCancelProgress());
             }
 
-            if (!pd.isShowing()) {
-                pd.show();
+            if (!dialog.isShowing()) {
+                dialog.show();
             }
         }
     }
 
     private void dismissProgressDialog() {
-        if (pd != null) {
-            pd.dismiss();
-            pd = null;
+        if (dialog != null) {
+            dialog.dismiss();
+            dialog = null;
         }
     }
 
