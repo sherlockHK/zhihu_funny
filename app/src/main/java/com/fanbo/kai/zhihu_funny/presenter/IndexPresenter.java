@@ -17,6 +17,6 @@ public class IndexPresenter extends BasePresenter<IndexContract.View> implements
 
     @Override
     public void initSections() {
-        httpRequest(funnyApi.getSections(), response -> mView.showSections(response));
+        httpRequestWithLoading(funnyApi.getSections(), response -> mView.showSections(response));
     }
 }

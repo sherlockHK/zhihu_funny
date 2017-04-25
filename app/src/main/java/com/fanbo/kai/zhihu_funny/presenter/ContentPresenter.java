@@ -31,6 +31,6 @@ public class ContentPresenter extends BasePresenter<ContentContract.View> implem
     }
 
     private void fetchContentBody() {
-        httpRequest(funnyApi.getNewsById(storyIds.get(0)), response -> mView.showContent(response.getBody()));
+        httpRequestWithLoading(funnyApi.getNewsById(storyIds.get(0)), response -> mView.showContent(response.getBody()));
     }
 }

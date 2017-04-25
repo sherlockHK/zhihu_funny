@@ -57,9 +57,22 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
     }
 
     /**
-     * presenter层发网络请求，封装了loading动画，错误提示等
+     * presenter层发网络请求
      * */
     protected <P extends BaseModel> void httpRequest(Observable<P> observable, final RequestListener<P> listener) {
+        Subscription subscribe = observable
+                .map(new ApiResponseFunc1<P>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(listener::onSuccess);
+        addSubscribe(subscribe);
+    }
+
+    /**
+     * presenter层发网络请求，封装了loading动画，错误提示等
+     * */
+    protected <P extends BaseModel> void httpRequestWithLoading(Observable<P> observable, final RequestListener<P> listener) {
         Subscription subscribe = observable
                 .map(new ApiResponseFunc1<P>())
                 .subscribeOn(Schedulers.io())
