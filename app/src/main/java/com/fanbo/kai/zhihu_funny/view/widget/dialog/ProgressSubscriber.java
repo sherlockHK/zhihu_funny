@@ -1,14 +1,10 @@
-package com.fanbo.kai.zhihu_funny.view.widget.dialog;
+package com.fanbo.kai.zhihu_funny.presenter.base;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import com.fanbo.kai.zhihu_funny.FunnyApp;
 import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
-
-import java.net.ConnectException;
-import java.net.SocketTimeoutException;
-import java.net.UnknownHostException;
+import com.fanbo.kai.zhihu_funny.utils.ExceptionHelper;
+import com.fanbo.kai.zhihu_funny.view.widget.dialog.ProgressDialogHandler;
 
 import rx.Subscriber;
 
@@ -52,11 +48,7 @@ public class ProgressSubscriber<T extends BaseModel> extends Subscriber<T> imple
 
     @Override
     public void onError(Throwable e) {
-        if (e instanceof SocketTimeoutException || e instanceof ConnectException || e instanceof UnknownHostException) {
-            Toast.makeText(FunnyApp.getAppContext(), "网络超时，请检查网络", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(FunnyApp.getAppContext(), "error:" + e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+        ExceptionHelper.handleException(e);
         dismissProgressDialog();
     }
 

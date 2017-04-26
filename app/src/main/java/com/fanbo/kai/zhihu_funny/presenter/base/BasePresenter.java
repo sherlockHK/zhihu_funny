@@ -6,6 +6,7 @@ import com.fanbo.kai.zhihu_funny.model.base.ApiResponseFunc1;
 import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
 import com.fanbo.kai.zhihu_funny.model.db.DbManager;
 import com.fanbo.kai.zhihu_funny.network.FunnyApi;
+import com.fanbo.kai.zhihu_funny.utils.ExceptionHelper;
 import com.fanbo.kai.zhihu_funny.view.base.BaseView;
 import com.fanbo.kai.zhihu_funny.view.widget.dialog.ProgressSubscriber;
 
@@ -65,7 +66,7 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(listener::onSuccess);
+                .subscribe(listener::onSuccess, ExceptionHelper::handleException);
         addSubscribe(subscribe);
     }
 
