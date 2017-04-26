@@ -1,10 +1,9 @@
-package com.fanbo.kai.zhihu_funny.presenter.base;
+package com.fanbo.kai.zhihu_funny.view.widget.dialog;
 
 import android.content.Context;
 
 import com.fanbo.kai.zhihu_funny.model.base.BaseModel;
 import com.fanbo.kai.zhihu_funny.utils.ExceptionHelper;
-import com.fanbo.kai.zhihu_funny.view.widget.dialog.ProgressDialogHandler;
 
 import rx.Subscriber;
 

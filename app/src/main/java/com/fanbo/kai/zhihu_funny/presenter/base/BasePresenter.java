@@ -67,7 +67,7 @@ public class BasePresenter<T extends BaseView> implements BasePresenterInterface
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(listener::onSuccess, ExceptionHelper::handleException);
-        addSubscribe(subscribe);
+        addSubscription(subscribe);
     }
 
     /**
